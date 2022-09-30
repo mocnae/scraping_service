@@ -55,8 +55,9 @@ class Vacancy(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True, verbose_name='Дата')
 
     class Meta:
-        verbose_name='Вакансия'
+        verbose_name = 'Вакансия'
         verbose_name_plural = 'Вакансии'
+        ordering = ('timestamp',)
 
     def __str__(self):
         return self.title

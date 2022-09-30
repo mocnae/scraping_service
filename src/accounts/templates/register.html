@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %} Home {% endblock %}
+{% block title %} Register {% endblock %}
 
 {% block content %}
 <div class="container text-center">
@@ -9,11 +9,12 @@
 
 <div class="row">
     <div class="col-md-6 mx-auto">
-        <form method="GET" action="{% url 'list' %}">
+        <h4>Регистрация нового пользователя</h4>
+        <form method="POST" action="">{% csrf_token %}
             <div class="form-group">
                 {{ form.as_p }}
             </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
         </form>
     </div>
 </div>

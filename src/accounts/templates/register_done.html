@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+<div class="container text-center">
+    <h4>Серивс по сбору вакансий</h4>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <h4>Вы зарегистрированы в системе. Теперь можно войти <a href="{% url 'accounts:login' %}">Log in</a></h4>
+    </div>
+</div>
+{% endblock %}
