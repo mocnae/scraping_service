@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %} Home_authorized {% endblock %}
+
+{% block content %}
+<div class="container text-center">
+    <h4>Исходя из ваших настроек</h4>
+</div>
+
+{% for o in object_list %}
+            <div class="card">
+              <h5 class="card-header"><a href="{{ o.url }}">{{ o.title }}</a></h5>
+              <div class="card-body">
+                <h5 class="card-title">{{o.company}}</h5>
+                <p class="card-text">{{ o.description }}</p>
+                  <p>{{o.city}} | {{ o.language }} | {{ o.timestamp }}</p>
+              </div>
+            </div>
+
+        {% empty %}
+            <h3>Ничего не найдено. Попробуйте изменить настройки профиля.</h3>
+        {% endfor %}
+
+<div class="container text-center">
+    <h4>Так же можете попробовать найти интересующие вакансии с данной формы</h4>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <form method="GET" action="{% url 'list' %}">
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

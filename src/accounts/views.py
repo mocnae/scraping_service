@@ -13,13 +13,13 @@ def login_view(request):
         password = data.get('password')
         user = authenticate(request, email=email, password=password)
         login(request, user)
-        return redirect('home')
+        return redirect('scraping:home_authorized')
     return render(request, 'login.html', {'form': form})
 
 
 def logout_view(request):
     logout(request)
-    return redirect('home')
+    return redirect('scraping:home')
 
 
 def register_view(request):

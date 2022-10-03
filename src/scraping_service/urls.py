@@ -21,7 +21,9 @@ from .views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_view, name='home'),
+    # path('', home_view, name='home'),
     path('accounts/', include(('accounts.urls', 'accounts'))),
+    path('scraping/', include(('scraping.urls', 'scraping'))),
     path('list', list_view, name='list'),
+    path('oauth/', include('social_django.urls', namespace='social')),
 ]
