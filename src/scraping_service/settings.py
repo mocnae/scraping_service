@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-vf3-kikiuh&*%s&vuhkekz23x(3nhdj#r576&c3julfg=lt))j'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -155,5 +155,6 @@ LOGIN_URL = 'accounts:login'
 LOGOUT_URL = 'accounts:logout'
 LOGIN_REDIRECT_URL = 'scraping:home'
 
-SOCIAL_AUTH_FACEBOOK_KEY = '462979692518568'  # App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = 'e54a08d8912950a7a047458a1ef69811'  # App Secret
+SOCIAL_AUTH_FACEBOOK_KEY = os.getenv('SOCIAL_AUTH_FACEBOOK_KEY') # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = os.getenv('SOCIAL_AUTH_FACEBOOK_SECRET') # App Secret
+
